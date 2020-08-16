@@ -391,45 +391,133 @@
 //   symbolExample: symbolExample,
 // }
 
-// object[symbolExample] = "test";
+// // object[symbolExample] = "test";
 
-function log(...rest) {
-  const array = ["test", "string", true, {}];
-  console.log(rest);
-  console.log(array);
-  console.log(...array, ...rest);
+// function log(...rest) {
+//   const array = ["test", "string", true, {}];
+//   console.log(rest);
+//   console.log(array);
+//   console.log(...array, ...rest);
+// }
+
+// log(1, "ddd", 4, "str", 55);
+
+// let a = ["uuu", 2, 3];
+// let b = [8, "tree", true, 156];
+
+// function collect(a, b) {
+//   let newArr = [];
+//   newArr = [...a, ...b];
+//   console.log(newArr);
+//   return newArr;
+// }
+// collect(a, b);
+
+// let c = [234, 245, true, "hjk"];
+// let d = { a: "name" };
+
+// function collect2(c, d) {
+//   let newArr2 = [];
+//   newArr2 = [...c, d];
+//   console.log(newArr2);
+//   return newArr2;
+// }
+
+// collect2(c, d);
+
+// const e = ["pizza", "borshch", "pizza", "tea", "borshch"];
+
+// function uniqueItem(e) {
+//   let set = new Set();
+//   set.add(e);
+//   e.forEach((element) => {});
+//   return e;
+// }
+
+// let string = "totodododod";
+// // let string = "torococorot";
+
+// function isPalindrome(string) {
+//   let arrString = string.split("").reverse().join("");
+//   console.log(arrString);
+
+//   if (arrString == string) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// let result = isPalindrome(string);
+// console.log(result);
+
+//////////////////////////////////////
+// Task 1
+//////////////////////////////////////
+
+let string3 =
+  "The includes() method determines whether one string may be found within another string, returning true or false as appropriate.";
+
+function getVowelNumber(string3) {
+  let stringNew = string3.toLowerCase().split("");
+  let counter = 0;
+
+  for (let item of stringNew) {
+    if (
+      item === "a" ||
+      item === "e" ||
+      item === "i" ||
+      item === "o" ||
+      item === "u"
+    ) {
+      counter++;
+    }
+  }
+
+  return counter;
 }
 
-log(1, "ddd", 4, "str", 55);
+let result = getVowelNumber(string3);
 
-let a = ["uuu", 2, 3];
-let b = [8, "tree", true, 156];
+console.log(result);
 
-function collect(a, b) {
-  let newArr = [];
-  newArr = [...a, ...b];
-  console.log(newArr);
-  return newArr;
+//////////////////////////////////////
+// Task 2
+//////////////////////////////////////
+
+function logNumbers(n) {
+  for (let i = 0; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      console.log("buzz");
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else {
+      console.log(i);
+    }
+  }
 }
-collect(a, b);
 
-let c = [234, 245, true, "hjk"];
-let d = { a: "name" };
+console.log(logNumbers(16));
 
-function collect2(c, d) {
-  let newArr2 = [];
-  newArr2 = [...c, d];
-  console.log(newArr2);
-  return newArr2;
+//////////////////////////////////////
+// Task 3
+//////////////////////////////////////
+
+function avg(...theArgs) {
+  let sum = 0;
+
+  for (let item of theArgs) {
+    sum += item;
+  }
+
+  return sum / theArgs.length;
 }
 
-collect2(c, d);
+let result2 = avg(1, 3, 5, 10, 30);
+console.log(result2);
 
-const e = ["pizza", "borshch", "pizza", "tea", "borshch"];
-
-function uniqueItem(e) {
-  let set = new Set();
-  set.add(e);
-  e.forEach((element) => {});
-  return e;
-}
+//////////////////////////////////////
+// Task 4
+//////////////////////////////////////
